@@ -14,25 +14,28 @@ export class Checkout extends SourceCheckout {
             <div block="ProgressBar">
                 <div block="Checkout" elem="ProgressSection">
                     <div block="Checkout" elem="Overlap" >
-                        <div block="Checkout" elem="StepBarTotal" />
-                        <div block="Checkout" elem="StepBarActive" mods={ { isSecond: title == "Billing step", isThird: title == 'Thank you for your purchase!'  } } />
-
-                        <div block="Checkout" elem="StepsNum">
-                            <div block="Checkout" elem="Num1" mods={ { isSecond: title == "Billing step", isThird: title == 'Thank you for your purchase!'  } }>1</div>
-                            <div block="Checkout" elem="Num2" mods={ { isSecond: title == "Billing step", isThird: title == 'Thank you for your purchase!'  } }>2</div>
+                        <div block="Checkout" elem="StepBarTotal" >
+                            <span block="Checkout" elem="Step1">1</span>
+                            <span 
+                                block="Checkout" 
+                                elem="Step2"
+                                mods={ { isSecond: title == "Billing step"}} 
+                                >2
+                            </span>
                         </div>
-                    </div>
-                    
-
-                    <div block="Checkout" elem="StepsTitle">
-                        <div block="Checkout" elem="Step">{ "Shipping" }</div>
-                        <div block="Checkout" elem="Step">{ "Review & Payments" }</div>
+                        <div block="Checkout" 
+                             elem="StepBarActive" 
+                             mods={ { isSecond: title == "Billing step", isThird: title == 'Thank you for your purchase!'}} 
+                        />
+                           
+                        <div block="Checkout" elem="StepLabes">
+                            <div block="Checkout" elem="Lable">{ "Shipping" }</div>
+                            <div block="Checkout" elem="Lable">{ "Review & Payments" }</div>
+                        </div>
                     </div>
                 </div>
             </div>
         );
-
-        
     }
 
     render() {
@@ -60,5 +63,4 @@ export class Checkout extends SourceCheckout {
     }
 }
 
-// we now export the extended and modified version of the class
 export default Checkout;
