@@ -19,7 +19,7 @@ export class Checkout extends SourceCheckout {
                             <span 
                                 block="Checkout" 
                                 elem="Step2"
-                                mods={ { isSecond: title == "Billing step"}} 
+                                mods={ { isSecond: title == "Billing step", isThird: title == 'Thank you for your purchase!'}} 
                                 >2
                             </span>
                         </div>
